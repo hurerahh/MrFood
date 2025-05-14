@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start; /* Align form to the left */
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('assets/login-img.jpg'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire container */
+    background-position: center right; /* Move the background image slightly to the right */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 0 20px; /* Add some padding for the form */
+    animation: fadeInBackground 2s ease-in-out; /* Apply the fade-in animation */
+}
+
+/* Add keyframes for the animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px); /* Start slightly above its position */
+        opacity: 0; /* Start with no visibility */
+    }
+    to {
+        transform: translateY(0); /* End at its original position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Add keyframes for the background image animation */
+@keyframes fadeInBackground {
+    from {
+        opacity: 0; /* Start with no visibility */
+    }
+    to {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+.login-form {
+    flex: 0 0 330px; /* Keep the width of the form */
+    background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background */
+    padding: 10px; /* Reduce padding to decrease height */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: slideIn 1.5s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth form animation */
+}
+
+.login-form .logo img {
+    width: 130px; /* Adjust size as needed */
+}
+
+.login-form input {
+    width: 100%;
+    padding: 8px; /* Reduce padding inside inputs */
+    margin: 8px 0; /* Reduce margin between inputs */
+    border: 1px solid #b5b5b5;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.login-form button {
+    background-color: green;
+    color: white;
+    padding: 8px; /* Reduce button padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px; /* Reduce margin above the button */
+}
+.login-form a {
+    display: block;
+    margin-top: 10px; /* Reduce margin above the link */
+    color: #000000;
+    text-decoration: none;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: row; /* Align buttons horizontally */
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Add spacing between buttons */
+    margin-top: 8px; /* Reduce margin above social login buttons */
+}
+
+.social-login button {
+    background-color: transparent; /* Remove background color */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    cursor: pointer; /* Keep the pointer cursor */
+    transition: transform 0.2s ease, opacity 0.2s ease; /* Add smooth transition for hover effects */
+}
+
+.social-login button:hover {
+    transform: scale(1.2); /* Slightly enlarge the button on hover */
+    opacity: 0.8; /* Reduce opacity slightly for a subtle effect */
+}
+
+.social-login button img {
+    width: 30px; /* Set a fixed width for the symbols */
+    height: 30px; /* Set a fixed height for the symbols */
+    object-fit: contain; /* Ensure the image fits properly */
+}
+
+.google-btn:hover img {
+    filter: brightness(1.2); /* Brighten the Google icon on hover */
+}
+
+.gmail-btn:hover img {
+    filter: brightness(1.2); /* Brighten the Gmail icon on hover */
+}
+
+.whatsapp-btn:hover img {
+    filter: brightness(1.2); /* Brighten the WhatsApp icon on hover */
+}
+
+.google-btn {
+    background-color: #db4437;
+    color: white;
+}
+
+.gmail-btn {
+    background-color: #d93025;
+    color: white;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .login-form {
+        width: 100%;
+    }
+}
